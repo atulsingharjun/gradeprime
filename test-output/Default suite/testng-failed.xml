@@ -6,6 +6,8 @@
       <class name="gradeprime.login">
         <methods>
           <include name="validlogin"/>
+          <include name="teardown"/>
+          <include name="setup"/>
         </methods>
       </class> <!-- gradeprime.login -->
     </classes>
