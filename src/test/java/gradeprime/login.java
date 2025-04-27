@@ -1,22 +1,17 @@
 package gradeprime;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 import framework.base.configuration;
 
-public class login  {
-	  configuration config = new configuration(); 
-		 WebDriver driver;
+public class login extends configuration  {
 	
+	  //configuration config = new configuration();  if we can not extend then we use this
+	 
 	@Test
 	public void validlogin() {
-		 driver =new ChromeDriver();
-	
-		driver.get(config.link);
-		driver.close();
+		 
+		 driver.get(link);
+	     System.out.println("Title is: " + driver.getTitle());
 		
 	}
 
