@@ -1,5 +1,7 @@
 package framework.base;
 
+import java.time.Duration;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -14,10 +16,11 @@ public class configuration {
    public String link = "https://gradeprime.simplyone.ai/#";  
    public WebDriver driver;
     
-    @BeforeClass
+   @BeforeTest
     public void setup() {
         driver = new ChromeDriver();
-        
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
        
     }
     @AfterTest
