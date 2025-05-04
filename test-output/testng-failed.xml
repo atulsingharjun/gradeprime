@@ -5,9 +5,10 @@
     <classes>
       <class name="gradeprime.login">
         <methods>
-          <include name="correctlogin"/>
           <include name="teardown"/>
           <include name="setup"/>
+          <include name="signup"/>
+          <include name="loadCredentials"/>
         </methods>
       </class> <!-- gradeprime.login -->
     </classes>

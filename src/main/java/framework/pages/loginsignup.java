@@ -10,6 +10,12 @@ public class loginsignup {
 	public By userid = By.xpath("//input[@name='username']");
 	public By password =By.xpath("//input[@name='password']");
 	public By login= By.xpath("//button[ @type='submit']");
-	
+	public By username=By.xpath("//span[@id='useriddata']");
+	public By error =By.xpath("//h2[text()='ERROR']");
+	public By logout =By.xpath("//a[normalize-space()='Logout']");
+	public By forgot =By.xpath("//p[@class='text_dark1 comicrelief']");
+	public By forgotverify =By.xpath("//h2[@class='funsized']");
+	public By signup=By.xpath("//a[contains(text(), 'Sign up')]");
+	public By signupverify=By.xpath("//h3[normalize-space(text())='Welcome to Grade Prime']");
 
 }
