@@ -1,117 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="6" failed="1" skipped="0">
+<testng-results ignored="7" total="9" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-04T17:42:48 IST" name="Default suite" finished-at="2025-05-04T17:43:05 IST" duration-ms="17130">
+  <suite started-at="2025-05-22T19:44:19 IST" name="Default suite" finished-at="2025-05-22T19:44:40 IST" duration-ms="20814">
     <groups>
     </groups>
-    <test started-at="2025-05-04T17:42:48 IST" name="Default test" finished-at="2025-05-04T17:43:05 IST" duration-ms="17130">
-      <class name="gradeprime.login">
-        <test-method is-config="true" signature="setup()[pri:0, instance:gradeprime.login@209da20d]" started-at="2025-05-04T17:42:48 IST" name="setup" finished-at="2025-05-04T17:42:52 IST" duration-ms="4030" status="PASS">
+    <test started-at="2025-05-22T19:44:19 IST" name="Default test" finished-at="2025-05-22T19:44:40 IST" duration-ms="20814">
+      <class name="gradeprime.users">
+        <test-method is-config="true" signature="setup()[pri:0, instance:gradeprime.users@11fc564b]" started-at="2025-05-22T19:44:19 IST" name="setup" finished-at="2025-05-22T19:44:25 IST" duration-ms="5816" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="loadCredentials()[pri:0, instance:gradeprime.login@209da20d]" started-at="2025-05-04T17:42:52 IST" name="loadCredentials" finished-at="2025-05-04T17:42:52 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="loadCredentials()[pri:0, instance:gradeprime.users@11fc564b]" started-at="2025-05-22T19:44:25 IST" name="loadCredentials" finished-at="2025-05-22T19:44:25 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadCredentials -->
-        <test-method signature="blankfields()[pri:0, instance:gradeprime.login@209da20d]" started-at="2025-05-04T17:42:52 IST" name="blankfields" finished-at="2025-05-04T17:42:56 IST" duration-ms="3799" status="PASS">
+        <test-method signature="movetouser()[pri:0, instance:gradeprime.users@11fc564b]" started-at="2025-05-22T19:44:25 IST" name="movetouser" finished-at="2025-05-22T19:44:39 IST" duration-ms="13566" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- blankfields -->
-        <test-method signature="correctlogin()[pri:0, instance:gradeprime.login@209da20d]" started-at="2025-05-04T17:42:56 IST" name="correctlogin" finished-at="2025-05-04T17:42:58 IST" duration-ms="2730" status="PASS">
+        </test-method> <!-- movetouser -->
+        <test-method signature="add()[pri:0, instance:gradeprime.users@11fc564b]" started-at="2025-05-22T19:44:39 IST" name="add" finished-at="2025-05-22T19:44:39 IST" depends-on-methods="gradeprime.users.movetouser" duration-ms="85" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- correctlogin -->
-        <test-method signature="forgotbuttonwithoutid()[pri:0, instance:gradeprime.login@209da20d]" started-at="2025-05-04T17:42:58 IST" name="forgotbuttonwithoutid" finished-at="2025-05-04T17:42:59 IST" duration-ms="603" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- forgotbuttonwithoutid -->
-        <test-method signature="frgotbuttonwithid()[pri:0, instance:gradeprime.login@209da20d]" started-at="2025-05-04T17:42:59 IST" name="frgotbuttonwithid" finished-at="2025-05-04T17:43:00 IST" duration-ms="1520" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- frgotbuttonwithid -->
-        <test-method signature="invalidpassword()[pri:0, instance:gradeprime.login@209da20d]" started-at="2025-05-04T17:43:00 IST" name="invalidpassword" finished-at="2025-05-04T17:43:02 IST" duration-ms="1094" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidpassword -->
-        <test-method signature="invalidusername()[pri:0, instance:gradeprime.login@209da20d]" started-at="2025-05-04T17:43:02 IST" name="invalidusername" finished-at="2025-05-04T17:43:03 IST" duration-ms="1054" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidusername -->
-        <test-method signature="signup()[pri:0, instance:gradeprime.login@209da20d]" started-at="2025-05-04T17:43:03 IST" name="signup" finished-at="2025-05-04T17:43:04 IST" duration-ms="1791" status="FAIL">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
-            <message>
-              <![CDATA[element click intercepted: Element is not clickable at point (1128, 602)
-  (Session info: chrome=135.0.7049.116)
-Build info: version: '4.32.0', revision: 'd17c8aa950'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [41f84935f96750d2263a6a8f40f3f4d2, clickElement {id=f.CDE767B521D49F6153F3FB5AB43AB494.d.E2C04BF9B5867954BCA528B38802CA27.e.418}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.116, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58869}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58869/devtoo..., se:cdpVersion: 135.0.7049.116, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (41f84935f96750d2263a6a8f40f3f4d2)] -> xpath: //a[contains(text(), 'Sign up')]]
-Session ID: 41f84935f96750d2263a6a8f40f3f4d2]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (1128, 602)
-  (Session info: chrome=135.0.7049.116)
-Build info: version: '4.32.0', revision: 'd17c8aa950'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [41f84935f96750d2263a6a8f40f3f4d2, clickElement {id=f.CDE767B521D49F6153F3FB5AB43AB494.d.E2C04BF9B5867954BCA528B38802CA27.e.418}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.116, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58869}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58869/devtoo..., se:cdpVersion: 135.0.7049.116, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (41f84935f96750d2263a6a8f40f3f4d2)] -> xpath: //a[contains(text(), 'Sign up')]]
-Session ID: 41f84935f96750d2263a6a8f40f3f4d2
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at gradeprime.login.signup(login.java:136)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- signup -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:gradeprime.login@209da20d]" started-at="2025-05-04T17:43:04 IST" name="teardown" finished-at="2025-05-04T17:43:05 IST" duration-ms="386" status="PASS">
+        </test-method> <!-- add -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:gradeprime.users@11fc564b]" started-at="2025-05-22T19:44:39 IST" name="teardown" finished-at="2025-05-22T19:44:40 IST" duration-ms="1223" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- gradeprime.login -->
+      </class> <!-- gradeprime.users -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

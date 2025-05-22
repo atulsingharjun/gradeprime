@@ -18,4 +18,11 @@ public class loginsignup {
 	public By signup=By.xpath("//a[contains(text(), 'Sign up')]");
 	public By signupverify=By.xpath("//h3[normalize-space(text())='Welcome to Grade Prime']");
 
+	public By user =By.xpath("//span[text()=' Add']");
+	public By userverify = By.xpath("//p[text()='Users']");
+	public By add =By.xpath("//button[.//span[normalize-space()='Add']]");
+	public By ausername =By.xpath("//input[@name='username']");
+	public By auserid =By.xpath("//input[@name='username']");
+	
+	
 }

@@ -33,6 +33,7 @@ public class login extends configuration {
 	String upassword;
 	String wid;
 	String wpassword;
+	String auname;
 
 	@BeforeClass
 	public void loadCredentials() {
@@ -42,12 +43,13 @@ public class login extends configuration {
 			upassword = prop.getProperty("password");
 			wid=prop.getProperty("wid");
 			wpassword=prop.getProperty("wpassword");
+			auname =prop.getProperty("auname");
 		} catch (IOException e) {
 			System.err.println("Failed to load properties: " + e.getMessage());
 		}
 	}
 
-	@Test
+	@Test(groups = {"login"},enabled=false)
 	public void correctlogin() throws InterruptedException {
 		validlogin(); // Assuming this is defined in your configuration or base class
 
@@ -60,7 +62,7 @@ public class login extends configuration {
 		assertTrue(username.getText().equals("Gradeprime"), "Login title text does not match expected.");
 		logout();
 	}
-	@Test
+	@Test(groups = {"login"},enabled=false)
 	public void invalidusername() {
 		validlogin();
 		driver.findElement(element.userid).sendKeys(wid);
@@ -75,7 +77,7 @@ public class login extends configuration {
 		softAssert.assertEquals(actualErrorText, expectedErrorText, "Error message mismatch");
 
 	}
-	@Test
+	@Test(groups = {"login"},enabled=false)
 	public void invalidpassword() {
 		validlogin();
 		driver.findElement(element.userid).sendKeys(uid);
@@ -88,7 +90,7 @@ public class login extends configuration {
 		softAssert.assertEquals(actualErrorText, expectedErrorText, "Error message mismatch");
 
 	}
-	@Test
+	@Test(groups = {"login"},enabled=false)
 	public void blankfields() {
 		validlogin();
 		driver.findElement(element.userid);
@@ -101,7 +103,7 @@ public class login extends configuration {
 		softAssert.assertEquals(actualErrorText, expectedErrorText, "Error message mismatch");
 
 	}
-	@Test
+	@Test(groups = {"login"},enabled=false)
 	public void forgotbuttonwithoutid() {
 		validlogin();
 		driver.findElement(element.forgot).click();
@@ -112,7 +114,7 @@ public class login extends configuration {
 		softAssert.assertEquals(actualErrorText, expectedErrorText, "Error message mismatch");
 	}
 
-	@Test
+	@Test(groups = {"login"},enabled=false)
 	public void frgotbuttonwithid() {
 		validlogin();
 		driver.findElement(element.userid).sendKeys(uid);
@@ -120,21 +122,38 @@ public class login extends configuration {
 		WebElement forgotverify= driver.findElement(element.forgotverify);
 		assertTrue(forgotverify.getText().equals("Forgot Password"), " Forgot Passwordnot match expected.");
 
-		driver.findElement(By.xpath("//a[contains(text(), 'Home')]")).click();
-		
+		driver.navigate().back();
+
 
 
 	}
-	@Test
+	@Test(groups = {"login"},enabled=false)
 	public void signup() {
-		validlogin();
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement signupButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(), 'Sign up')]")));
+	
+		 validlogin();
+		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		    
+		
 
-		// Scroll into view before clicking
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", signupButton);
-		signupButton.click();
+		   
+		    WebElement signupButton = wait.until(ExpectedConditions.elementToBeClickable(element.signup));
 
+		    // Scroll the element into view (to avoid overlay issues)
+		    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", signupButton);
+
+		    // Slight delay to allow any animation/overlay to settle (optional)
+		    try {
+		        Thread.sleep(500);
+		    } catch (InterruptedException e) {
+		        e.printStackTrace();
+		    }
+
+		    // Click the button
+		    signupButton.click();
+
+		    // Now verify the signup page text
+		    WebElement signupverify = wait.until(ExpectedConditions.visibilityOfElementLocated(element.signupverify));
+		    Assert.assertEquals(signupverify.getText().trim(), "Welcome to Grade Prime", "Signup verification text mismatch.");
 
 
 

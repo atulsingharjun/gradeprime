@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -44,14 +45,15 @@ public class configuration {
 		String expectedText = "Welcome to Grade Prime";
 		Assert.assertEquals(actualText, expectedText,"The text on the page does not match the expected value");
 
-	}
-	@AfterTest
+	}	
+	@AfterClass
 	public void teardown() {
 		if (driver != null) {
 			driver.close();
 			driver.quit();
 		}
 	}
+	
 
 	public void logout() {
 		WebElement dropdown =driver.findElement(element.username);
